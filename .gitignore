@@ -1,0 +1,6 @@
+node_modules
+.env
+/studynotion/server/node_modules
+/server/node_modules
+/studynotion/server/.env
+/server/.env
