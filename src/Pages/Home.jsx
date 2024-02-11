@@ -34,7 +34,7 @@ function Home() {
 
                         Empower your future with <HighlightBox title="Coding Skills" />
                     </div>
-                    <div className="sm:w-9/12 text-center text-richblack-100">
+                    <div className="sm:w-9/12 text-left text-richblack-100">
                         With our online coding courses, you can learn at your own pace, from anywhere in the world, and get access to a wealth of resources, including hands-on projects, quizzes, and personalized feedback from instructors.
                     </div>
                     <div className="flex justify-center items-center gap-4">
