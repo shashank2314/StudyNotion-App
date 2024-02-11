@@ -30,7 +30,7 @@ function Home() {
                         Become an Instructor <AiOutlineArrowRight />
                     </Link>
 
-                    <div className=" text-4xl text-justify">
+                    <div className=" text-4xl text-left">
 
                         Empower your future with <HighlightBox title="Coding Skills" />
                     </div>
@@ -145,7 +145,7 @@ function Home() {
                 <div>
                     <div className="text-4xl font-semibold text-center my-10">
                         Your swiss knife for
-                        <HighlightBox title={"learning any language"} />
+                        <HighlightBox title={" learning any language"} />
                         <div className="text-center text-richblack-700 font-medium lg:w-[75%] mx-auto leading-6 text-base mt-3">
                             Using spin making learning multiple languages easy. with 20+
                             languages realistic voice-over, progress tracking, custom schedule
@@ -180,7 +180,7 @@ function Home() {
 
 
             {/* section 3 */}
-            <div className="relative flex flex-col w-11/12 justify-between items-center">
+            <div className="relative flex flex-col w-11/12 justify-between items-center pb-5 pl-2">
                 <div className="flex flex-col lg:flex-row gap-20 items-center justify-center w-full">
                     <div className="lg:w-[50%] w-[90%]">
                         <img
@@ -190,7 +190,7 @@ function Home() {
                         />
                     </div>
                     <div className="lg:w-[40%] flex gap-10 flex-col">
-                        <h1 className="lg:w-[50%] text-4xl font-semibold text-justify text-white">
+                        <h1 className="lg:w-[50%] text-4xl font-semibold text-left text-white">
                             Become an
                             <HighlightBox title={" instructor"} />
                         </h1>

@@ -28,7 +28,7 @@ function PowerCode() {
             <div>
                 <div className="text-4xl font-semibold text-center my-10">
                     Unlock the
-                    <HighlightBox title={"Power of Code"} />
+                    <HighlightBox title={" Power of Code"} />
                     <p className="text-center text-richblack-300 text-lg font-semibold mt-1">
                         Learn to Build Anything You Can Imagine
                     </p>

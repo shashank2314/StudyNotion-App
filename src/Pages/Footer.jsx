@@ -10,7 +10,7 @@ export default function Footer() {
     return (
         <div className="w-full bg-richblack-700 flex justify-center items-center p-10">
             <div className="w-full flex flex-col lg:flex-row gap-20 justify-center text-left min-h-screen text-white">
-                <div className=" flex justify-between gap-10">
+                <div className=" flex sm:flex-row flex-col justify-between gap-10">
                     <div className="flex flex-col">
                         <img src={logo} className="w-50 mb-5" alt="logo" />
                         <FooterLink flexDirection={"flex-col"} FooterData={FooterLink1} />

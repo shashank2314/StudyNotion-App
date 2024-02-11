@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 function FooterLink({FooterData,flexDirection}) {
     return (
-        <div className={`flex ${flexDirection==="flex-row" ? "flex-row justify-between gap-10" : "flex-col"} `}>
+        <div className={`flex ${flexDirection==="flex-row" ? "sm:flex-row justify-between gap-10" : "sm:flex-col"} flex-col`}>
             {
                 FooterData.map((link, index) => {
                     return (
