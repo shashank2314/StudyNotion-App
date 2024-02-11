@@ -8,9 +8,9 @@ import logo from "../assets/Logo/Logo-Full-Light.png";
 
 export default function Footer() {
     return (
-        <div className="w-full bg-richblack-700 flex justify-center items-center py-8">
-            <div className="w-11/12 flex gap-20 justify-center text-left h-screen text-white">
-                <div className=" flex gap-10">
+        <div className="w-full bg-richblack-700 flex justify-center items-center p-10">
+            <div className="w-full flex flex-col lg:flex-row gap-20 justify-center text-left min-h-screen text-white">
+                <div className=" flex justify-between gap-10">
                     <div className="flex flex-col">
                         <img src={logo} className="w-50 mb-5" alt="logo" />
                         <FooterLink flexDirection={"flex-col"} FooterData={FooterLink1} />
@@ -24,8 +24,8 @@ export default function Footer() {
                     <FooterLink flexDirection={"flex-col"} FooterData={FooterLink3} />
                     <FooterLink flexDirection={"flex-col"} FooterData={FooterLink4} />
                 </div>
-                <div className="w-[.2%] h-full bg-white"></div>
-                <FooterLink flexDirection={"flex-row gap-10"} FooterData={FooterLink2} />
+                <div className="h-[2px] w-full lg:w-[.2%] lg:h-screen  bg-white"></div>
+                <FooterLink flexDirection={"flex-row"} FooterData={FooterLink2} />
             </div>
         </div>
     );

@@ -15,7 +15,7 @@ import Compare_with_others from "../assets/Images/Compare_with_others.png"
 import Plan_your_lessons from "../assets/Images/Plan_your_lessons.png"
 import Instructor from "../assets/Images/Instructor.png"
 import PowerCode from "../components/Home/PowerCode";
-
+import Footer from "./Footer"
 function Home() {
 
     return (
@@ -26,13 +26,13 @@ function Home() {
 
                 <div className="relative flex flex-col mx-auto w-11/12 items-center text-white justify-between gap-8" >
 
-                    <Link className="flex flex-row px-4 py-2 gap-1 bg-richblack-700 rounded-full items-center justify-center border-b-2 border-richblack-400 text-richblack-200 transition-all duration-200 hover:scale-95 hover:bg-richblack-800 w-fit" to={"/signup"}>
+                    <Link className="flex flex-row px-4 py-2 mt-4 gap-1 bg-richblack-700 rounded-full items-center justify-center border-b-2 border-richblack-400 text-richblack-200 transition-all duration-200 hover:scale-95 hover:bg-richblack-800 w-fit" to={"/signup"}>
                         Become an Instructor <AiOutlineArrowRight />
                     </Link>
 
-                    <div className="flex flex-row gap-2 justify-center items-center text-4xl">
+                    <div className=" text-4xl text-justify">
 
-                        Empower your future with<HighlightBox title="Coding Skills" />
+                        Empower your future with <HighlightBox title="Coding Skills" />
                     </div>
                     <div className="sm:w-9/12 text-center text-richblack-100">
                         With our online coding courses, you can learn at your own pace, from anywhere in the world, and get access to a wealth of resources, including hands-on projects, quizzes, and personalized feedback from instructors.
@@ -64,7 +64,7 @@ function Home() {
                             flow={false}
                             codeblock={<div className="codeblock2 absolute"></div>}
                             code={`import React from "react";\n import Button from "./Button";\nimport TypeAnimation from "react-type";\nimport { FaArrowRight } from "react-icons/fa";\nfunction Home()\n{\nreturn (\n<div>Home</div>\n)\n}\nexport default Home;`}
-                        />npm
+                        />
                     </div>
                 </div>
                 <PowerCode />
@@ -84,16 +84,16 @@ function Home() {
                         
                     
                 </div>
-                <div className="flex w-11/12 gap-30 justify-between h-fit items-center py-10">
-                    <div className="text-4xl font-bold w-full pr-10">
+                <div className="flex w-11/12 flex-col sm:flex-row gap-10 justify-between h-fit items-center py-10">
+                    <div className="text-4xl font-bold w-full md:pr-10">
                         Get the Skills you need for a<HighlightBox title={" Job that is in demand"} />
                     </div>
-                    <div className="flex flex-col w-full h-fit justify-between items-start gap-5 text-xl pl-10">
+                    <div className="flex flex-col w-full h-fit justify-between items-start gap-5 text-xl md:pl-10">
                         <p>The modern StudyNotion is the dictates its own terms. Today, to be a competitive specialist requires more than professional skills.</p>
                         <Button active={true} too={"login"}>Learn More</Button>
                     </div>
                 </div>
-                <div className="flex gap-20 justify-between items-center h-fit">
+                <div className="flex flex-col md:flex-row gap-20 justify-between items-center h-fit">
                     <div className="flex flex-col gap-3">
 
                         <div className="flex justify-center items-center gap-6">
@@ -126,7 +126,7 @@ function Home() {
                         </div>
                     </div>
                     <div className="relative">
-                        <div className="w-[600px] h-[500px]  bg-white ">
+                        <div className="w-[300px] h-[270px] md:w-[600px] md:h-[500px]  bg-white ">
                             <img src={TimeLineImage} className=" w-[600px] h-fit" alt="" />
                         </div>
                         <div className="absolute bottom-2 left-5  right-5 p-8 text-xl bg-caribbeangreen-500 text-white flex justify-between items-center">
@@ -181,8 +181,8 @@ function Home() {
 
             {/* section 3 */}
             <div className="relative flex flex-col w-11/12 justify-between items-center">
-                <div className="flex flex-col lg:flex-row gap-20 items-center justify-center">
-                    <div className="lg:w-[50%]">
+                <div className="flex flex-col lg:flex-row gap-20 items-center justify-center w-full">
+                    <div className="lg:w-[50%] w-[90%]">
                         <img
                             src={Instructor}
                             alt=""
@@ -190,9 +190,9 @@ function Home() {
                         />
                     </div>
                     <div className="lg:w-[40%] flex gap-10 flex-col">
-                        <h1 className="lg:w-[50%] text-4xl font-semibold ">
+                        <h1 className="lg:w-[50%] text-4xl font-semibold text-justify text-white">
                             Become an
-                            <HighlightBox title={"instructor"} />
+                            <HighlightBox title={" instructor"} />
                         </h1>
 
                         <p className="font-medium text-[16px] text-justify w-[90%] text-richblack-300">
@@ -218,6 +218,7 @@ function Home() {
 
 
             {/* footer */}
+            <Footer />
             
         </div >
     );

@@ -4,7 +4,7 @@ import { TypeAnimation } from "react-type-animation";
 function Codeblocks({ Heading, Desc, btn1, btn2, code, flow, codeblock }) {
     
     return (
-        <div className={`flex ${flow ? "flex-row" : "flex-row-reverse"} justify-between items-center gap-20 my-20 w-full`}>
+        <div className={`flex flex-col ${flow ? "lg:flex-row" : "lg:flex-row-reverse"} justify-between items-center gap-20 my-20 w-full`}>
             <div className="flex flex-col justify-between gap-8 w-full ">
                 <div className="text-4xl text-white font-semibold">
                     {Heading}
@@ -42,7 +42,7 @@ function Codeblocks({ Heading, Desc, btn1, btn2, code, flow, codeblock }) {
                     <p>12</p>
                     <p>13</p>
                 </div>
-            <div className="w-[500px]">
+            <div className="w-[300px] md:w-[500px]">
                 <TypeAnimation 
                     sequence={[code,10000,""]}
                     repeat={Infinity}
