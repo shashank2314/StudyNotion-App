@@ -6,8 +6,12 @@ import "video-react/dist/video-react.css"
 import { useLocation } from "react-router-dom"
 import { BigPlayButton, Player } from "video-react"
 
-import { markLectureAsComplete } from "../../services/operations/courseDetailsAPI"
-import { updateCompletedLectures } from "../../slices/viewCourseSlice"
+import { markLectureAsComplete ,getFullDetailsOfCourse } from "../../services/operations/courseDetailsAPI"
+import { setCourseSectionData,
+  setEntireCourseData,
+  setTotalNoOfLectures,
+  setCompletedLectures,
+  updateCompletedLectures} from "../../slices/viewCourseSlice"
 import IconBtn from "../Common/IconBtn"
 
 const VideoDetails = () => {
@@ -27,23 +31,32 @@ const VideoDetails = () => {
 
   useEffect(() => {
     ;(async () => {
-      if (!courseSectionData.length) return
+      setLoading(true);
+      if (!courseSectionData.length ) {
+        const data = await getFullDetailsOfCourse(courseId,token);
+        console.log("ddaddad",data);
+        dispatch(setCompletedLectures(data.courseDetails));
+        dispatch(setCourseSectionData(data.courseDetails.courseContent));
+        dispatch(setEntireCourseData(data.completedVideos));
+        return
+      }
       if (!courseId && !sectionId && !subSectionId) {
         navigate(`/dashboard/enrolled-courses`)
       } else {
-        // console.log("courseSectionData", courseSectionData)
+        console.log("courseSectionData", courseSectionData)
         const filteredData = courseSectionData.filter(
           (course) => course._id === sectionId
-        )
-        // console.log("filteredData", filteredData)
-        const filteredVideoData = filteredData?.[0]?.subSection.filter(
-          (data) => data._id === subSectionId
-        )
-        // console.log("filteredVideoData", filteredVideoData)
-        setVideoData(filteredVideoData[0])
-        setPreviewSource(courseEntireData.thumbnail)
-        setVideoEnded(false)
-      }
+          )
+          console.log("filteredData", filteredData)
+          const filteredVideoData = filteredData?.[0]?.subSection.filter(
+            (data) => data._id === subSectionId
+            )
+            console.log("filteredVideoData", filteredVideoData)
+            setVideoData(filteredVideoData[0])
+            setPreviewSource(courseEntireData.thumbnail)
+            setVideoEnded(false)
+          }
+          setLoading(false);
     })()
   }, [courseSectionData, courseEntireData, location.pathname])
 

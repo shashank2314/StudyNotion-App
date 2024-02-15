@@ -28,19 +28,19 @@ function Codeblocks({ Heading, Desc, btn1, btn2, code, flow, codeblock }) {
             <div className="relative w-full h-fit flex code-border rounded-lg px-4 py-3" >
                 {codeblock}
                 <div className="text-center flex flex-col w-[10%] text-richblack-400 font-inter font-bold ">
-                    <p>1</p>
-                    <p>2</p>
-                    <p>3</p>
-                    <p>4</p>
-                    <p>5</p>
-                    <p>6</p>
-                    <p>7</p>
-                    <p>8</p>
-                    <p>9</p>
-                    <p>10</p>
-                    <p>11</p>
-                    <p>12</p>
-                    <p>13</p>
+                    <span>1</span>
+                    <span>2</span>
+                    <span>3</span>
+                    <span>4</span>
+                    <span>5</span>
+                    <span>6</span>
+                    <span>7</span>
+                    <span>8</span>
+                    <span>9</span>
+                    <span>10</span>
+                    <span>11</span>
+                    <span>12</span>
+                    <span>13</span>
                 </div>
             <div className="w-[300px] md:w-[500px]">
                 <TypeAnimation 

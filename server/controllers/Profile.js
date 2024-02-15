@@ -1,11 +1,12 @@
 const Profile = require("../models/Profile")
 const CourseProgress = require("../models/CourseProgress")
-
+const Category = require("../models/Category")
 const Course = require("../models/Course")
 const User = require("../models/User")
 const { uploadImageToCloudinary } = require("../utils/imageUploader")
 const mongoose = require("mongoose")
 const { convertSecondsToDuration } = require("../utils/secToDuration")
+// const { CategoryScale } = require("chart.js")
 // Method for updating a profile
 exports.updateProfile = async (req, res) => {
   try {
@@ -58,9 +59,10 @@ exports.updateProfile = async (req, res) => {
 }
 
 exports.deleteAccount = async (req, res) => {
+  console.log("Hello");
   try {
     const id = req.user.id
-    // console.log(id)
+    console.log("id", id)
     const user = await User.findById({ _id: id })
     if (!user) {
       return res.status(404).json({
@@ -72,13 +74,34 @@ exports.deleteAccount = async (req, res) => {
     await Profile.findByIdAndDelete({
       _id: new mongoose.Types.ObjectId(user.additionalDetails),
     })
+    console.log("hey");
+    if (user.accountType === "Instructor") {
+      console.log("hey1");
+      for (const courseId of user.courses) {
+        const course = await Course.findById(courseId);
+        console.log("hey2");
+        console.log("category id",new mongoose.Types.ObjectId(course.category));
+        await Category.findByIdAndUpdate(
+          { _id: new mongoose.Types.ObjectId(course.category) },
+          { $pull: { courses: courseId } },
+          { new: true }
+        )
+        console.log("hey3");
+        await Course.findByIdAndDelete(
+          courseId,
+        )
+
+      }
+    }
     for (const courseId of user.courses) {
+      console.log("hey4");
       await Course.findByIdAndUpdate(
         courseId,
         { $pull: { studentsEnrolled: id } },
         { new: true }
       )
     }
+    console.log("hey5");
     // Now Delete User
     await User.findByIdAndDelete({ _id: id })
     res.status(200).json({
