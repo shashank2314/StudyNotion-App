@@ -25,6 +25,7 @@ const ContactUsForm = () => {
         data
       );
       // console.log("Email Res - ", res)
+      toast.success("Message Send Successfully!");
       setLoading(false)
     } catch (error) {
       // console.log("ERROR MESSAGE - ", error.message)
